@@ -4,7 +4,9 @@ import GlobalCards from "../components/GlobalCards";
 import { useGetCryptosQuery } from "../servicesRedux/cryptoApi";
 import millify from "millify";
 import Cryptocurrencies from "./Cryptocurrencies";
+import CryptocurrenciesAll from "./CryptocurrenciesAll";
 import News from "./News";
+import { TouchableOpacity } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
   const { data, isFetching } = useGetCryptosQuery(10);
@@ -59,12 +61,11 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ paddingLeft: 10, fontWeight: "bold", fontSize: 18 }}>
               Top 10 Cryptocurrencies
             </Text>
-            <Text
-              style={{ fontSize: 10, color: "skyblue" }}
-              onPress={() => navigation.navigate("Cryptocurrencies")}
+            <TouchableOpacity
+              onPress={() => navigation.navigate("CryptocurrenciesAll")}
             >
-              Show More
-            </Text>
+              <Text style={{ fontSize: 10, color: "skyblue" }}>Show More</Text>
+            </TouchableOpacity>
           </View>
 
           <Cryptocurrencies simplified />

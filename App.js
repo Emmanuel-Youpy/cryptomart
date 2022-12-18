@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Tabs from "./navigation/Tabs";
 import store from "./app/store";
 import { Provider } from "react-redux";
+import CryptocurrenciesAll from "./screens/CryptocurrenciesAll";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,11 @@ export default function App() {
             <Stack.Screen
               name="Tabs"
               component={Tabs}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="CryptocurrenciesAll"
+              component={CryptocurrenciesAll}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
