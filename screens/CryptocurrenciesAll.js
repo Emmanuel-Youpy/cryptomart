@@ -1,5 +1,5 @@
-import { View, Text, ScrollView } from "react-native";
-import React from "react";
+import { View, Text, ScrollView, TextInput } from "react-native";
+import React, { useEffect, useState } from "react";
 import GlobalCards from "../components/GlobalCards";
 import { useGetCryptosQuery } from "../servicesRedux/cryptoApi";
 import millify from "millify";
@@ -8,15 +8,31 @@ import News from "./News";
 import { TouchableOpacity } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
-  const { data, isFetching } = useGetCryptosQuery();
-  const globalStats = data?.data?.stats;
+  const { cryptosList, isFetching } = useGetCryptosQuery();
+  const globalStats = cryptosList?.data?.stats;
+  const [cryptos, setCryptos] = useState([]);
 
-  if (isFetching) return <Text style={{ marginTop: 40 }}>"Loading..."</Text>;
+  const [searchTerm, setSearchTerm] = useState("");
 
-  console.log(data);
+  // useEffect(() => {
+  //   const filteredData = cryptosList?.data?.coins.filter((coin) =>
+  //     coin.name.toLowerCase().includes(searchTerm.toLowerCase())
+  //   );
+  //   setCryptos(filteredData);
+  // }, [cryptosList]);
+
+  // if (isFetching) return <Text style={{ marginTop: 40 }}>"Loading..."</Text>;
+
+  // console.log(cryptosList);
 
   return (
     <ScrollView style={{ marginTop: 40 }}>
+      {/* <View>
+        <TextInput
+          placeholder="Search Cryptocurrency"
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </View> */}
       <View>
         <View style={{ padding: 5 }}>
           <View

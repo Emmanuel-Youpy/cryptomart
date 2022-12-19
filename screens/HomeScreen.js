@@ -61,11 +61,11 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ paddingLeft: 10, fontWeight: "bold", fontSize: 18 }}>
               Top 10 Cryptocurrencies
             </Text>
-            <TouchableOpacity
+            {/* <TouchableOpacity
               onPress={() => navigation.navigate("CryptocurrenciesAll")}
             >
               <Text style={{ fontSize: 10, color: "skyblue" }}>Show More</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
 
           <Cryptocurrencies simplified />
