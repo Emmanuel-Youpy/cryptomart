@@ -4,13 +4,23 @@ import GlobalCards from "../components/GlobalCards";
 import { useGetCryptosQuery } from "../servicesRedux/cryptoApi";
 import millify from "millify";
 import Cryptocurrencies from "./Cryptocurrencies";
-import CryptocurrenciesAll from "./CryptocurrenciesAll";
 import News from "./News";
 import { TouchableOpacity } from "react-native";
+import { A } from "@expo/html-elements";
 
 const HomeScreen = ({ navigation }) => {
   const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
+
+  const outLink = () => {
+    return (
+      <Text>
+        {" "}
+        <A href="https://google.com">Go to Google</A>;
+      </Text>
+    );
+  };
+  const google = "https://google.com";
 
   if (isFetching) return <Text>"Loading..."</Text>;
 
@@ -49,7 +59,39 @@ const HomeScreen = ({ navigation }) => {
           />
           <GlobalCards />
         </View>
+        <TouchableOpacity>
+          <Text>
+            <A href={google}>Goooo</A>
+          </Text>
+        </TouchableOpacity>
+        {/* {outLink}///////////////////////////////////////////////////////////////////////// */}
+        <Text></Text>
         <View style={{ padding: 5 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingRight: 5,
+              alignItems: "center",
+              paddingBottom: 15,
+            }}
+          >
+            <Text style={{ paddingLeft: 10, fontWeight: "bold", fontSize: 18 }}>
+              Top 10 Cryptocurrencies
+            </Text>
+            <TouchableOpacity
+              style={{ paddingBottom: 0 }}
+              onPress={() => navigation.navigate("CryptocurrenciesAll")}
+            >
+              <Text style={{ fontSize: 12, color: "blue", fontWeight: "bold" }}>
+                Show More
+              </Text>
+            </TouchableOpacity>
+          </View>
+
+          <Cryptocurrencies simplified />
+        </View>
+        <View style={{ padding: 10 }}>
           <View
             style={{
               flexDirection: "row",
@@ -58,20 +100,13 @@ const HomeScreen = ({ navigation }) => {
               alignItems: "center",
             }}
           >
-            <Text style={{ paddingLeft: 10, fontWeight: "bold", fontSize: 18 }}>
-              Top 10 Cryptocurrencies
-            </Text>
-            {/* <TouchableOpacity
-              onPress={() => navigation.navigate("CryptocurrenciesAll")}
-            >
-              <Text style={{ fontSize: 10, color: "skyblue" }}>Show More</Text>
-            </TouchableOpacity> */}
+            <Text style={{ fontWeight: "bold", fontSize: 16 }}> News</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("NewsAll")}>
+              <Text style={{ fontSize: 12, color: "blue", fontWeight: "bold" }}>
+                Show More
+              </Text>
+            </TouchableOpacity>
           </View>
-
-          <Cryptocurrencies simplified />
-        </View>
-        <View style={{ padding: 10 }}>
-          <Text>Top 10 News</Text>
           <News />
         </View>
       </View>

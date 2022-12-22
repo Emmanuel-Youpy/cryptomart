@@ -11,7 +11,7 @@ const baseUrl = "https://bing-news-search1.p.rapidapi.com";
 const createRequest = (url) => ({ url, headers: cryptoNewsHeaders });
 
 export const cryptoNewsApi = createApi({
-  reducerPath: "createNewsApi",
+  reducerPath: "cryptoNewsApi",
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     getCryptoNews: builder.query({
@@ -23,4 +23,4 @@ export const cryptoNewsApi = createApi({
   }),
 });
 
-export const { useGetCryptosQuery } = cryptoNewsApi;
+export const { useGetCryptoNewsQuery } = cryptoNewsApi;

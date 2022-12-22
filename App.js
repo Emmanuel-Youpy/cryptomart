@@ -8,6 +8,8 @@ import Tabs from "./navigation/Tabs";
 import store from "./app/store";
 import { Provider } from "react-redux";
 import CryptocurrenciesAll from "./screens/CryptocurrenciesAll";
+import NewsAll from "./screens/NewsAll";
+import CryptoDetails from "./screens/CryptoDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +27,16 @@ export default function App() {
             <Stack.Screen
               name="CryptocurrenciesAll"
               component={CryptocurrenciesAll}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="NewsAll"
+              component={NewsAll}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="CryptoDetails"
+              component={CryptoDetails}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
