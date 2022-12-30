@@ -25,9 +25,9 @@ const Cryptocurrencies = ({ simplified }) => {
   const demoImage =
     "https://coinrevolution.com/wp-content/uploads/2020/06/cryptonews.jpg";
 
-  console.log(cryptosList);
+  // console.log(cryptosList);
 
-  console.log(cryptos);
+  // console.log(cryptos);
   return (
     <ScrollView>
       <View>
@@ -46,16 +46,14 @@ const Cryptocurrencies = ({ simplified }) => {
           }}
         >
           {cryptos?.map((currency) => (
-            // Adding th card key in a view
-            // <View key={currency.uuid}>
             <Cards
+              key={currency.uuid}
               title={`${currency.rank}. ${currency.name}`}
               image={currency?.iconUrl || demoImage}
               body={millify(currency.price)}
               body1={millify(currency.marketCap)}
               body2={millify(currency.change)}
             />
-            // </View>
           ))}
         </View>
       </View>

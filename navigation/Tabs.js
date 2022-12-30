@@ -40,9 +40,9 @@ const Tabs = () => {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Exchanges" component={Exchanges} />
+      {/* <Tab.Screen name="Exchanges" component={Exchanges} /> */}
       <Tab.Screen name="Cryprocurrencies" component={Cryptocurrencies} />
-      <Tab.Screen name="CryptoDetails" component={CryptoDetails} />
+      {/* <Tab.Screen name="CryptoDetails" component={CryptoDetails} /> */}
       <Tab.Screen name="News" component={News} />
     </Tab.Navigator>
   );

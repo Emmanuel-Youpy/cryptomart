@@ -43,7 +43,7 @@ const News = ({ simplified }) => {
     <View>
       {cryptonews.value.map((news, i) => (
         <NewsCard
-          key={news.id}
+          key={i}
           title={news.name}
           image={news?.image?.thumbnail?.contentUrl || demoImage}
           image2={news?.provider[0]?.image?.thumbnail?.contentUrl || demoImage}

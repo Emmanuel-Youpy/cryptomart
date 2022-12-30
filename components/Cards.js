@@ -3,7 +3,7 @@ import React from "react";
 import { Divider } from "@rneui/themed";
 import { useNavigation } from "@react-navigation/native";
 
-const Cards = ({ title, image, key, body, body1, body2, onPress }) => {
+const Cards = ({ title, image, body, body1, body2, onPress }) => {
   const navigation = useNavigation();
 
   return (
@@ -16,12 +16,11 @@ const Cards = ({ title, image, key, body, body1, body2, onPress }) => {
         borderWidth: 0.5,
         borderColor: "lightgrey",
       }}
-      onPress={() =>
-        navigation.navigate("CryptoDetails", {
-          titlePass: title,
-          
-        })
-      }
+      // onPress={() =>
+      //   navigation.navigate("CryptoDetails", {
+      //     titlePass: title,
+      //   })
+      // }
     >
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
         <Text style={{ fontWeight: "bold" }}>{title}</Text>

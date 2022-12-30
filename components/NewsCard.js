@@ -7,7 +7,6 @@ const NewsCard = ({
   title,
   image,
   image2,
-  key,
   date,
   desc,
   onPress,
