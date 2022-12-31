@@ -9,7 +9,7 @@ const NewsAll = () => {
         <View style={{ alignItems: "center", paddingBottom: 20 }}>
           <Text style={{ fontWeight: "bold" }}>News</Text>
         </View>
-        <News />
+        {/* <News /> */}
       </View>
     </ScrollView>
   );

@@ -38,7 +38,7 @@ const NewsCard = ({
               source={{ uri: image2 }}
               style={{ width: 30, height: 30, borderRadius: 15 }}
             />
-            <Text>{name}</Text>
+            <Text style={{ paddingLeft: 10 }}>{name}</Text>
           </View>
           <View>
             <Text style={{ color: "gray" }}>{date}</Text>

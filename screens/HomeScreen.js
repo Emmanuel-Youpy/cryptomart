@@ -59,14 +59,8 @@ const HomeScreen = ({ navigation }) => {
           />
           <GlobalCards />
         </View>
-        <TouchableOpacity>
-          <Text>
-            <A href={google}>Goooo</A>
-          </Text>
-        </TouchableOpacity>
-        {/* {outLink}///////////////////////////////////////////////////////////////////////// */}
-        <Text></Text>
-        <View style={{ padding: 5 }}>
+
+        <View style={{ padding: 5, paddingTop: 30 }}>
           <View
             style={{
               flexDirection: "row",
@@ -91,7 +85,7 @@ const HomeScreen = ({ navigation }) => {
 
           <Cryptocurrencies simplified />
         </View>
-        <View style={{ padding: 10 }}>
+        <View style={{ padding: 10, paddingTop: 30 }}>
           <View
             style={{
               flexDirection: "row",

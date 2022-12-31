@@ -21,7 +21,7 @@ const News = ({ simplified }) => {
     "https://coinrevolution.com/wp-content/uploads/2020/06/cryptonews.jpg";
 
   if (!cryptonews?.value) return <Text>Loading</Text>;
-  console.log(cryptonews);
+  // console.log(cryptonews);
 
   const google = "https://google.com";
   const Abc = (
